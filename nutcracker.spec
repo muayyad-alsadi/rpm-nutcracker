@@ -1,7 +1,7 @@
 %global github_name twemproxy
 Name:           nutcracker
 Version:        0.4.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        twemproxy aka. nutcracker is a fast and lightweight proxy for memcached and redis protocol
 
 License:        ASL 2.0
@@ -44,9 +44,13 @@ install -Dpm0644 %{S:1} %{buildroot}%{_unitdir}/%{name}.service
 %license LICENSE
 %doc README.md NOTICE README.rpm-dist
 %doc conf/*.yml
+%doc notes/recommendation.md
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}.rc
 %ghost %config(noreplace) %{_sysconfdir}/%{name}/%{name}.yml
 
 %changelog
+* Thu Aug 25 2016 Muayyad Alsadi <alsadi@gmail.com> - 0.4.1-2
+- add recommendation.md
+
 * Tue Aug 23 2016 Muayyad Alsadi <alsadi@gmail.com> - 0.4.1-1
 - initial package
