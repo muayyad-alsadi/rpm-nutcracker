@@ -1,0 +1,12 @@
+[Unit]
+Description=nutcracker a proxy for redis and memcached
+After=network.target
+AssertFileNotEmpty=/etc/nutcracker/nutcracker.yml
+
+[Service]
+EnvironmentFile=/etc/sysconfig/nutcracker.rc
+ExecStart=/usr/sbin/nutcracker $DAEMON_ARGS
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

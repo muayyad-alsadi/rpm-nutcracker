@@ -1,0 +1,14 @@
+place config file in /etc/nutcracker/nutcracker.yml
+you can use files like:
+
+* nutcracker.yml
+* nutcracker.leaf.yml
+* nutcracker.root.yml
+
+you may define other config in /etc/sysconfig/nutcracker.rc
+
+to start the service 
+
+```
+systemctl start nutcracker
+```
